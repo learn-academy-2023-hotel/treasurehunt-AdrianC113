@@ -47,6 +47,7 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 
 ### 📚 User Stories
 - As a user, I can see a page with a three by three grid board game with a question mark in each square.
+
 - branch: game-board
 - mapped over array in state to dynamically render 9 squares
 - styled the board
@@ -71,9 +72,15 @@ branch: tree-emoji
 
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
 
-- branch: treasure-bomb
+branch: treasure-bomb
 
 - As a user, I can click on a “Play Again” button that will restart the game.
+
+branch: playagainbutton
+- added onClick representing rest button under square div
+- created new variable to house reset values that will appear once onClick button is pressed
+- assign the bomb and treasure location to a new index on the board
+
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.

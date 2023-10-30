@@ -1,10 +1,12 @@
 import React, { useState } from "react"
-
 import Square from "./components/Square"
 
 import "./App.css"
-import { upload } from "@testing-library/user-event/dist/upload"
-import { click } from "@testing-library/user-event/dist/click"
+// import { upload } from "@testing-library/user-event/dist/upload"
+// import { click } from "@testing-library/user-event/dist/click"
+
+
+
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -42,6 +44,21 @@ const handleSquareClick = (clickedSquareIndex) => {
 } 
 setBoard(updatedBoard)
 }
+const playAgain = () => {
+  setBoard([
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+  ])
+  setBombLocation(Math.floor(Math.random() * board.length))
+  setTreasureLocation(Math.floor(Math.random() * board.length))
+}
 
   return (
     <> 
@@ -59,6 +76,7 @@ setBoard(updatedBoard)
         )
       })}
       </div>
+      <button onClick={playAgain}>Play Again</button>
     </>
   )
 }

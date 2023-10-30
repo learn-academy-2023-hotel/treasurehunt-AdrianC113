@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Square from "./components/Square"
 
 import "./App.css"
+import { upload } from "@testing-library/user-event/dist/upload"
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -18,7 +19,12 @@ const App = () => {
   ])
 
 const handleSquareClick = (clickedSquareIndex) => {
-  alert(clickedSquareIndex)
+  // create a variable holding copy of current state
+  let updatedBoard = [...board]
+  // use index from clickedSqureIndex to update the current square's value with emoji using bracket notation
+  updatedBoard[clickedSquareIndex] = "🌲"
+  // update state with the new board
+  setBoard(updatedBoard)
 }
 
   return (

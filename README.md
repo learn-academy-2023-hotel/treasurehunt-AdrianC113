@@ -46,12 +46,41 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 As a developer, you are tasked with creating a treasure hunt game. The user will see a game board on the page and be able to select various squares on the board. Hidden behind one square is a treasure that will win the game, and hidden behind another square is a bomb that will lose the game. All other squares will reveal a neutral image. The user will be given a particular number of clicks to find the treasure that will win the game.
 
 ### 📚 User Stories
-
 - As a user, I can see a page with a three by three grid board game with a question mark in each square.
+
+- branch: game-board
+- mapped over array in state to dynamically render 9 squares
+- styled the board
+- passed value of state to the square 
+- styled the square
+
 - As a user, when I click on one of the question marks, an alert appears with the index position of that question mark in the array.
+
+branch: index-position
+- added onClick to square div
+- created handleClick method to Square
+- passed the index to Square and handleClick
+- added handleSquare to App.js
+- passed handleSquareClick to Square to get the index back to App.js (using functional props)
+
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
+
+branch: tree-emoji
+- made a copy of board using spread operator
+- updated value of a square at particular index to be a tree 
+
+
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
+
+branch: treasure-bomb
+
 - As a user, I can click on a “Play Again” button that will restart the game.
+
+branch: playagainbutton
+- added onClick representing rest button under square div
+- created new variable to house reset values that will appear once onClick button is pressed
+- assign the bomb and treasure location to a new index on the board
+
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.
